@@ -16,12 +16,10 @@ async function checkWeather(){
     let weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=5a4293ed09f0f6bf7691e2f53072b63e&units=metric`;
     let weatherResponse = await fetch(weatherURL);
     let weatherData = await weatherResponse.json();
-    console.log(weatherData);
     document.querySelector('.city').innerHTML = city.charAt(0).toUpperCase()+city.slice(1).toLowerCase();
     document.querySelector('.temp').innerHTML = Math.round(weatherData.main.temp) +'°C';
     document.querySelector('.humidity').innerHTML = weatherData.main.humidity+'%';
     document.querySelector('.wind').innerHTML = weatherData.wind.speed+'km/hr';
-
     if(weatherData.weather[0].main==='Clouds'){
         image.src="images/clouds.png";
     }
