@@ -3,7 +3,7 @@ let image = document.querySelector('.weather-icon');
 let searchBtn = document.querySelector('.searchBtn');
 async function checkWeather(){
     city =  document.querySelector('.enterCity').value; 
-    let coordToCity = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=5a4293ed09f0f6bf7691e2f53072b63e`
+    let coordToCity = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=5a4293ed09f0f6bf7691e2f53072b63e`
     let lat,long;
     let response = await fetch(coordToCity);
     let data = await response.json();
